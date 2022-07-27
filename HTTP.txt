@@ -1,2 +1,50 @@
-HTTP (hyper text transfer protocol) протокол передачи гиппертекстовой информации
+протокол 
+набор правил и законов покоторым будут передоваться данные
 
+
+HTTP (hyper text transfer protocol) 
+протокол передачи данных, изначально предназначен для передачи гиппертекстовой информации
+
+
+HTTPS (hyper text transfer protocol secure) 
+протокол передачи информации конфеденциальность которой обеспечивается шифрованием информации
+
+
+HTTP запрос, элементы
+
+1	HTTP метод
+2	путь к запрашиваему документу (URL)
+3	версия HTTP
+4	Headers (заголовок) опционально, служебная информация
+5	Тело запроса
+
+
+HTTP ответ, элементы
+
+1	Версия HTTP протокола
+2	Статус код успешности операции
+3	Status message (краткое описание кода состояния)
+4	HTTP Headers (заголовки)
+5	Тело ответа
+
+
+
+response
+
+GET / HTTP/1.1
+Host: alizar.habrahabr.ru
+
+
+
+request
+
+HTTP/1.1 200 OK
+Server: nginx/1.2.1
+Date: Sat, 08 Mar 2014 22:53:46 GMT
+Content-Type: application/octet-stream
+Content-Length: 7
+Last-Modified: Sat, 08 Mar 2014 22:53:30 GMT
+Connection: keep-alive
+Accept-Ranges: bytes
+
+Wisdom
