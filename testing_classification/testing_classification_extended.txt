@@ -1,0 +1,719 @@
+				классификация тестирования
+
+
+
+		по позитивности
+позитивное — е (positive testing) направлено на исследование приложения в ситуации, когда все 
+действия выполняются строго по инструкции без каких бы то ни было ошибок, отклонений, 
+ввода неверных данных и т.д.
+
+негативное — е (negative testing, invalid testing) — направлено на исследование работы приложения 
+в ситуациях, когда с ним выполняются (некорректные) операции и/или используются данные, 
+потенциально приво-дящие к ошибкам 
+Negative testing. Tests aimed at showing that a component or system does not work. Negative testing 
+is related to the testers’attitude rather than a specific test approach or test design technique, 
+e.g. testing with invalid input values or exceptions. 
+[ISTQB Glossary]
+Invalid testing. Testing using input values that should be rejected by the component or system. 
+[ISTQB Glossary]
+
+
+
+
+
+
+		по степени важности тестируемых функций
+SMOKE — (smoke test, intake test, build verification test) 
+направлено на проверку самой главной, самой важной, самой ключевой функциональности, 
+неработоспособность которой делает бессмысленной саму идею использования приложения 
+(или иного объекта, подвергаемого дымовому тестированию).
+
+тест критического пути (critical path test) направлено на исследование функциональности, 
+используемой типичными пользователями в типичной повседневной деятельности, проводится 
+после дымного тестирования. Пороговое значение метрики успешного прохождения 
+«теста критического пути» уже немного ниже, чем в дымовом тестировании, но всё равно достаточно высоко
+(как правило, порядка 70–80–90 % — в зависимости от сути проекта).
+
+расширенный тест е (extended test) направлено на исследование всей заявленной в требованиях 
+функциональности — даже той, которая низко проранжирована по степени важности. Но при наличии 
+достаточного количества времени и иных ресурсов тест-кейсы этого уровня могут затронуть даже 
+самые низкоприоритетные требования. Пороговое значение метрики успешного прохождения расширен-
+ного тестирования (иногда можно увидеть даже значения в диапазоне 30–50 %, т.к. подавляющее 
+большинство найденных здесь дефектов не представляет угрозы для успешного использования 
+приложения большинством пользователей)
+
+
+
+
+
+
+
+		по степени автоматизации
+ручное тестирование (manual testing)
+автоматизированное тестирование (automated testing, test automation)
+
+
+
+
+
+
+
+		по знанию кода
+тестирование черного ящика (black box testing, closed box testing, specification￾based testing) — 
+у тестировщика либо нет доступа к внутренней структуре и коду приложения, либо недостаточно знаний 
+для их понимания, либо он сознательно не обращается к ним в процессе тестирования.
+Black box testing. Testing, either functional or non-functional, without reference to the internal 
+structure of the component or system. [ISTQB Glossary]
+
+тестирование белого ящика (white box testing, open box testing, clear box testing, glass box testing) 
+— у тестировщика есть доступ к внутренней структуре и коду приложения, а также есть достаточно знаний 
+для понимания увиденного
+White box testing. Testing based on an analysis of the internal structure of the component or system. 
+[ISTQB Glossary]
+
+тестирование серого ящика  (gray box testing) — комбинация методов белого ящика и чёрного ящика, 
+состоящая в том, что к части кода и архитектуры у тестировщика доступ есть, а к части — нет
+
+
+
+
+
+
+
+		по запуску кода
+статическое (static testing) — тестирование без запуска кода на исполнение. В рамках этого 
+подхода тестированию могут подвергаться:
+ Документы (требования, тест-кейсы, описания архитектуры приложения, схемы баз данных и т.д.).
+ Графические прототипы (например, эскизы пользовательского интерфейса).
+ Код приложения
+ Параметры (настройки) среды исполнения приложения.
+ Подготовленные тестовые данные
+
+динамическое(dynamic testing) — тестирование с запускомкода на исполнение. Запускаться на исполнение 
+может как код всего приложения целиком (системное тестирование), так и код нескольких взаимосвя-
+занных частей (интеграционное тестирование), отдельных частей (модульное или компонентное тестирование) 
+и даже отдельные участки кода
+
+
+
+
+
+
+		по цели тестирования
+New feature test
+
+Повторное тестирование (re-testing, confirmation testing) — выполнение тест-кейсов, которые ранее 
+обнаружили дефекты, с целью подтверждения устранения дефектов. Фактически этот вид тестирования 
+сводится к действиям на финальной стадии жизненного цикла отчёта о дефекте, направленным на то, 
+чтобы перевести дефект в состояние «проверен» и «закрыт».
+Re-testing, Confirmation testing. Testing that runs test cases that failed the last time they were run,
+in order to verify the success of corrective actions. 
+[ISTQB Glossary]
+
+Регрессионное тестирование (regression testing) — тестирование, направленное на проверку того факта, 
+что в ранее работоспособной функциональности не появились ошибки, вызванные изменениями
+(после исправления багов) в приложении или среде его функционирования. Фредерик Брукс в своей книге  
+писал: «Фундаментальная проблема при сопровождении программ состоит в том, что исправление одной ошибки
+с большой вероятностью (20–50 %) влечёт появление новой». Потому регрессионное тестирование является 
+неотъемлемым инструментом обеспечения качества и активно используется практически в любом проекте
+  проводится в каждом билде
+  проверка исправленных багов
+  проверка связанных функциональностей
+  проверяется несколько раз
+  часто автоматизируют
+Выбор тестов для регрессии:
+  безопасность, критичные функции
+  часто меняющиеся области
+  тесты области с высокой вероятностью ошибки
+Regression testing. Testing of a previously tested program following modification to ensure 
+that defects have not been introduced or uncovered in unchanged areas of the software, as a result of 
+the changes made. It is performed when the software or its environment is changed. 
+[ISTQB Glossary]
+
+
+
+
+
+
+		по исполнению сценария
+сценарное (на основе тест-кейсов)(scripted testing, test case based test￾ing) — формализованный подход, 
+в котором тестирование производится на основе заранее подготовленных тест-кейсов, 
+наборов тест-кейсов и иной до-кументации.
+Scripted testing. Test execution carried out by following a previously documented sequence of tests. 
+[ISTQB Glossary]
+
+исследовательское(на основе чек листов)(exploratory testing) — частично формализованный подход, 
+в рамках которого тестировщик выполняет работу с приложением по выбранному сценарию, который, 
+в свою очередь, дорабатывается в процессе выполнения с целью более полного исследования приложения. 
+Ключевым фактором успеха при выполнении исследовательского тестирования является именно работа по 
+сценарию, а не выполнение разрозненных бездумных операций. Существует даже специальный сценарный подход,
+называемый сессионным тестированием (session-based test￾ing). В качестве альтернативы сценариям при 
+выборе действий с приложением иногда могут использоваться чек-листы, и тогда этот вид тестирования 
+называют тестированием на основе чек-листов (checklist-based testing)
+Exploratory testing. An informal test design technique where the tester actively controls the design of the tests as those tests 
+are performed and uses information gained while testing to design new and better tests. 
+[ISTQB Glossary]
+Session-based Testing. An approach to testing in which test activities are planned as uninterrupted 
+sessions of test design and execution, often used in conjunction with exploratory testing. 
+[ISTQB Glossary]
+Checklist-based Testing. An experience-based test design technique whereby the experienced tester 
+uses a high-level list of items to be noted, checked, or remembered, or a set of rules or criteria 
+against which a product has to be verified. 
+[ISTQB Glossary]
+
+интуитивное (ad hoc testing) — полностью неформализованный подход, в котором не предполагается
+использования ни тест-кейсов, ни чек-листов, ни сценариев — тестировщик полностью опирается на свой 
+профессионализм и интуицию (experience-based testing) для спонтанного выполнения с приложением действий,
+которые, как он считает, могут обнаружить ошибку. Этот вид тестирования используется редко и 
+исключительно как дополнение к полностью или частично формализованному тестированию в случаях, 
+когда для исследования некоторого аспекта поведения приложения (пока?) нет тест-кейсов
+Ad hoc testing. Testing carried out informally; no formal test preparation takes place, no recognized 
+test design technique is used, there are no expectations for results and arbitrariness guides the 
+test execution activity. [ISTQB Glossary]
+
+
+
+
+
+
+		По уровням
+компонентное(модульное)(unit) (unit testing, module testing, com￾ponent testing) направлено на 
+проверку отдельных небольших частей приложения, которые (как правило) можно исследовать 
+изолированно от других подобных частей. 
+Module testing, Unit testing, Component testing. The testing of individual software components. 
+[ISTQB Glossary]
+
+интеграционное  (integration testing, component integration testing, pairwise integration testing, 
+system integration testing, incremental testing, interface testing, thread testing) 
+направлено на проверку взаимодействия между несколькими частями приложения 
+(каждая из которых, в свою очередь, проверена отдельно на стадии модульного тестирования)
+Integration testing. Testing performed to expose defects in the interfaces and in the interactions 
+between integrated components or systems. [ISTQB Glossary]
+	компонентное интеграционное тестирование
+	системное интеграционное тестирование (API,CLI,GUI)(Тестирование интерфейса) 
+	(interface testing) — тестирование, направленное на проверку интерфейсов приложения или 
+	его компонентов. По опреде-лению ISTQB-глоссария этот вид тестирования относится к интеграционному 
+	тестированию, и это вполне справедливо для таких его вариаций как (API testing) и 
+	(CLI testing), и тестирование непосредственно интерфейса пользователя (GUI testing)
+	Interface Testing. An integration test type that is concerned with testing the interfaces 
+	between components or systems. [ISTQB Glossary]
+	API testing. Testing performed by submitting commands to the software under test using 
+	programming interfaces of the applica￾tion directly. [ISTQB Glossary]
+	CLI testing. Testing performed by submitting commands to the software under test using 
+	a dedicated command-line interface.[ISTQB Glossary]
+	GUI testing. Testing performed by interacting with the software under test via the graphical 
+	user interface. [ISTQB Glossary]
+
+системное  (system testing) направлено на проверку всегоприложения как единого целого, 
+собранного из частей, проверенных на двух предыдущих стадиях. Здесь не только выявляются дефекты 
+«на стыках» компонентов, но и появляется возможность полноценно взаимодействовать с приложением с 
+точки зрения конечного пользователя, применяя множество других видов тестирования
+System testing. The process of testing an integrated system to verify that it meets specified 
+requirements. [ISTQB Glossary]
+
+приемочное
+Приёмочное тестирование (User Acceptance Testing (UAT))(acceptance testing) — формализованное 
+тестирование, направленное на проверку приложения с точки зрения конечного пользователя/заказчика и 
+вынесения решения о том, принимает ли заказчик работу у исполнителя (проектной команды)
+Acceptance Testing. Formal testing with respect to user needs, requirements, and business processes 
+conducted to determine whether or not a system satisfies the acceptance criteria and to enable the user,
+customers or other authorized entity to determine whether or not to accept the system. 
+[ISTQB Glossary]
+
+	пользовательское приемочное тестирование
+
+	эксплуатационное
+
+	на соответствие контракту
+
+
+	Операционное приёмочное тестирование (operational acceptancetesting, production acceptance 
+	testing) — операционное тестирование, выполняемое с точки зрения выполнения инсталляции, 
+	потребления приложением ресурсов, совместимости с программной и аппаратной платформой и т.д.
+	Operational acceptance testing, Production acceptance testing. Operational testing in the 
+	acceptance test phase, typically performed in a (simulated) operational environment by 
+	operations and/or systems administration staff focusing on operational aspects, e.g. 
+	recoverability, resource-behavior, installability and technical compliance. 
+	[ISTQB Glossary]
+
+	Производственное приёмочное тестирование (factory acceptance testing) — выполняемое проектной 
+	командой исследование полноты и качества реализации приложения с точки зрения его готовности 
+	к передаче заказчику. Этот вид тестирования часто рассматривается как синоним альфа-тестирования
+	Factory acceptance testing. Acceptance testing conducted at the site at which the product is 
+	developed and performed by employees of the supplier organization, to determine whether or not 
+	a component or system satisfies the requirements, normally including hardware as well as 
+	software. [ISTQB Glossary]
+
+
+	Итоговое приёмочное тестирование (site acceptance testing) — тестирование конечными 
+	пользователями (представителями заказчика) приложения в реальных условиях эксплуатации с целью 
+	вынесения решения о том, требует ли приложение доработок или может быть принято в эксплуатацию 
+	в текущем виде.
+	Site acceptance testing. Acceptance testing by users/customers at their site, to determine 
+	whether or not a component or system satisfies the user/customer needs and fits within 
+	the business processes, normally including hardware as well as software. 
+	[ISTQB Glossary]
+
+	Альфа-тестирование (alpha testing) выполняется внутри организации-разработчика 
+	с возможным частичным привлечением конечных пользователей. Может являться формой внутреннего 
+	приёмочного тестирования. Суть  вкратце: продукт уже можно периодически показывать внешним 
+	пользователям, но он ещё достаточно «сырой», потому основное тестирование выполняется 
+	организацией-разработчиком.
+	 Alpha testing. Simulated or actual operational testing by potential users/customers or an 
+	independent test team at the developers’site, but outside the development organization. 
+	Alpha testing is often employed for off-the-shelf software as a form of internal acceptance 
+	testing. [ISTQB Glossary]
+
+	Бета-тестирование (beta testing) выполняется вне организации-разработчика с активным 
+	привлечением конечных пользователей/заказчиков. Может являться формой внешнего приёмочного 
+	тестирования. Суть вкратце: продукт уже можно открыто показывать внешним пользователям, он 
+	уже достаточно стабилен, но проблемы всё ещё могут быть, и для их выявления нужна обратная 
+	связь от реальных пользователей.
+	Beta testing. Operational testing by potential and/or existing users/customers at an external 
+	site not otherwise involved with the developers, to determine whether or not a component or 
+	system satisfies the user/customer needs and fits within the business processes. 
+	Beta testing is often employed as a form of external acceptance testing for off-the-shelf 
+	software in order to acquire feedback from the market. [ISTQB Glossary]
+
+	Гамма-тестирование (gamma testing) — финальная стадия тестирования перед выпуском продукта, 
+	направленная на исправление незначительных дефектов, обнаруженных в бета-тестировании. 
+	Как правило, также выполняется с максимальным привлечением конечных пользователей/заказчиков. 
+	Может являться формой внешнего приёмочного тестирования. Суть вкратце: продукт уже почти готов, 
+	и сейчас обратная связь от реальных пользователей используется для устранения 
+	последних недоработок
+	
+
+
+
+
+		Функциональное
+Функциональное тестирование (functional testing) — вид тестирования, направленный на проверку 
+корректности работы функциональности приложения (корректность реализации функциональных требований). 
+Часто функциональное тестирование ассоциируют с тестированием по методу чёрного ящика, однако и по 
+методу белого ящика вполне можно проверять корректность реализации функциональности
+функциональное тестирование направлено на проверку того, какие функции приложения реализованы, 
+и что они работают верным образом
+Functional testing. Testing based on an analysis of the specification of the functionality of a 
+component or system. [ISTQB Glossary]
+
+
+
+		НЕ Функциональное
+Нефункциональное тестирование (non-functional testing) — вид тестирования, направленный на проверку 
+нефункциональных особенностей приложения (корректность реализации нефункциональных требований), таких 
+как удобство использования, совместимость, производительность, безопасность и т.д
+Non-functional testing. Testing the attributes of a component or system that do not relate to functionality, e.g. reliability, efficiency, 
+usability, maintainability and portability. [ISTQB Glossary]
+
+тестирование удобства использования (usability testing) — тестирование, направленное на исследование 
+того, насколько конечному пользователю понятно, как работать с продуктом (understandability, 
+learnability, op￾erability), а также на то, насколько ему нравится использовать продукт(attractiveness). 
+Usability. The capability of the software to be understood, learned, used and attractive to the user 
+when used under specified conditions. 
+[ISTQB Glossary]
+Understandability. The capability of the software product to enable the user to understand whether 
+the software is suitable, and how it can be used for particular tasks and conditions of use. 
+[ISTQB Glossary]
+Learnability. The capability of the software product to enable the user to learn its application. 
+[ISTQB Glossary]
+Operability. The capability of the software product to enable the user to operate and control it. 
+[ISTQB Glossary]
+Attractiveness. The capability of the software product to be attractive to the user. 
+[ISTQB Glossary]
+
+тестирование безопасности (security testing) — тестирование, направленное на проверку способности 
+приложения противостоять злонамеренным попыткам получения доступа к данным или функциям, 
+права на доступ к которым у злоумышленника нет
+Security testing. Testing to determine the security of the software product. 
+[ISTQB Glossary]
+
+тестирование установки (Инсталляционное тестирование) (installation testing, installability testing) —
+тестирование, направленное на выявление дефектов, влияющих на протекание стадии инсталляции (установки) 
+приложения. В общем случае такое тестирование проверяет множество сценариев и аспектов работы инсталля-
+тора в таких ситуациях, как:
+  новая среда исполнения, в которой приложение ранее не было инсталлировано;
+  обновление существующей версии («апгрейд»);
+  изменение текущей версии на более старую («даунгрейд»);
+  повторная установка приложения с целью устранения возникших проблем («переинсталляция»);
+  повторный запуск инсталляции после ошибки, приведшей к невозможности продолжения инсталляции;
+  удаление приложения;
+  установка нового приложения из семейства приложений;
+  автоматическая инсталляция без участия пользователя.
+Installability testing. The process of testing the installability of a software product. Installability
+is the capability of the software product to be installed in a specified environment. 
+[ISTQB Glossary]
+
+тестирование доступности (accessibility testing) — тестирование, направленное на исследование 
+пригодности продукта к использованию людьми с ограниченными возможностями (слабым зрением и т.д.).
+Accessibility testing. Testing to determine the ease by which users with disabilities can use a 
+component or system. [ISTQB Glossary]
+
+тестирование локализации (localization testing, l10n) — тестирование, направленное на проверку 
+корректности и качества адаптации продукта к использованию на том или ином языке с учётом национальных 
+и культурных особенностей. Это тестирование следует за тестированием интернационализации 
+(см. предыдущий пункт) и проверяет корректность перевода и адаптации продукта, 
+а не готовность продукта к таким действиям.
+
+Тестирование интернационализации (internationalization testing, i18n test￾ing, globalization testing, 
+localizability testing) — тестирование, направленное на проверку готовности продукта к работе 
+с использованием различных языков и с учётом различных национальных и культурных особенностей.
+Этот вид тестирования не подразумевает проверки качества соответствующей адаптации 
+(этим занимается тестирование локализации, см. следующий пункт), оно сфокусировано именно на проверке 
+возможности такой адаптации (например: что будет, если открыть файл с иероглифом в имени; как бу-
+дет работать интерфейс, если всё перевести на японский; может ли приложение искать данные в тексте 
+на корейском и т.д.)
+
+тестирование данных и баз данных(data quality testing (database integ￾rity testing) 
+— два близких по смыслу вида тестирования, направленных на исследование таких характеристик данных, 
+как полнота, непротиворечивость, целостность, структурированность и т.д. В контексте баз 
+данных исследованию может подвергаться адекватность модели предметной области, 
+способность модели обеспечивать целостность и консистентность данных, корректность работы триггеров, 
+хранимых процедур и т.д
+Data quality. An attribute of data that indicates correctness with respect to some pre-defined 
+criteria, e.g., business expectations, requirements on data integrity, data consistency. 
+[ISTQB Glossary]
+Database integrity testing. Testing the methods and processes used to access and manage the data(base), 
+to ensure access methods, processes and data rules function as expected and that during access to the 
+database, data is not corrupted or unex￾pectedly deleted, updated or created. 
+[ISTQB Glossary]
+
+тестирование отказоустойчивости (failover testing) — тестирование, заключающееся в эмуляции или 
+реальном создании критических ситуаций с целью проверки способности приложения задействовать 
+соответствующие механизмы, предотвращающие нарушение работоспособности, производительности и 
+повреждения данных
+Failover Testing. Testing by simulating failure modes or actually causing failures in a controlled 
+environment. Following a failure, the failover mechanism is tested to ensure that data is not lost 
+or corrupted and that any agreed service levels are maintained (e.g., function availability or 
+response times). [ISTQB Glossary]
+
+тестирование восстанавливаемости и (recoverability testing) — тестирование способности приложения 
+восстанавливать свои функции и заданный уровень производительности, а также восстанавливать данные 
+в случае возникновения критической ситуации, приводящей к временной (частичной) утрате работоспособности приложения.
+Recoverability Testing. The process of testing to determine the recoverability of a software product 
+(the capability of the software product to re-establish a specified level of performance and recover 
+the data directly affected in case of failure). [ISTQB Glossary]	
+
+Тестирование надёжности (reliability testing) — тестирование способности приложения выполнять 
+свои функции в заданных условиях на протяжении заданного времени или заданного количества операций.
+
+тестирование использования ресурсов (resource utilization testing, effi￾ciency testing, storage testing) 
+— совокупность видов тестирования, проверяющих эффективность использования приложением доступных 
+ему ресурсов и зависимость результатов работы приложения от количества доступных ему ресурсов. 
+Часто эти виды тестирования прямо или косвенно примыкают к техникам тестирования производительности
+Resource utilization testing, Storage testing. The process of testing to determine the 
+resource-utilization of a software product. 
+[ISTQB Glossary]
+Efficiency testing. The process of testing to determine the efficiency of a software product 
+(the capability of a process to produce the intended outcome, relative to the amount of resources used).
+[ISTQB Glossary]
+
+тестирование производительности (performance testing) — исследование показателей скорости реакции 
+приложения на внешние воздействия при различной по характеру и интенсивности нагрузке.
+Performance Testing. The process of testing to determine the performance of a software product. 
+[ISTQB Glossary]
+В рамках тестирования производительности выделяют следующие подвиды
+	нагрузочное (load testing, capacity testing) — исследование способности приложения сохранять 
+	заданные показатели качества при нагрузке в допустимых пределах и некотором превышении 
+	этих пределов (определение «запаса прочности»)
+	Load Testing. A type of performance testing conducted to evaluate the behavior of a component 
+	or system with increasing load, e.g. numbers of parallel users and/or numbers of transactions, 
+	to determine what load can be handled by the component or system. [ISTQB Glossary]
+
+	масштабируемости (scalability testing) — исследование способности приложения увеличивать 
+	показатели производительности в соответствии с увеличением количества доступных приложению 
+	ресурсов
+	Scalability Testing. Testing to determine the scalability of the software product 
+	(the capability of the software product to be upgraded to accommodate increased loads). 
+	[ISTQB Glossary]
+
+	стресс тестирование (stress testing) — исследование поведения приложения при нештатных 
+	изменениях нагрузки, значительно превышающих расчётный уровень, или в ситуациях недоступности 
+	значительной части необходимых приложению ресурсов. Стрессовое тестирование может выполняться 
+	и вне контекста нагрузочного тестирования: тогда оно, как правило, называется 
+	«тестированием на разрушение» (destructive testing) и представляет собой крайнюю форму 
+	негативного тестирования
+	Stress testing. A type of performance testing conducted to evaluate a system or component 
+	at or beyond the limits of its antici￾pated or specified workloads, or with reduced 
+	availability of resources such as access to memory or servers. [ISTQB Glossary]
+
+	тест стабильности
+	обьемное е (volume testing) — исследование производительности приложения при обработке 
+	различных (как правило, больших) объёмов данных.
+	Volume Testing. Testing where the system is subjected to large volumes of data. [ISTQB Glossary]
+
+	конкурентное (concurrency testing) — исследование поведения приложения в ситуации, когда ему 
+	приходится обрабатывать большое количество одновременно поступающих запросов, что вызывает 
+	конкуренцию между запросами за ресурсы (базу данных, память, канал передачи данных, 
+	дисковую подсистему и т.д.). Иногда под конкурентным тестированием понимают также 
+	исследование работы многопоточных приложений и корректность синхронизации действий, 
+	производимых в разных потоках.
+	Concurrency testing. Testing to determine how the occurrence of two or more activities within 
+	the same interval of time, achieved either by interleaving the activities or by simultaneous 
+	execution, is handled by the component or system. [ISTQB Glossary]
+
+
+
+тестирование совместимости (compatibility testing, interoperability testing)
+— тестирование, направленное на проверку способности приложения работать в указанном окружении. 
+	кроссплатформенное тестирование(конфигурационное тестирование), 
+	(configura￾tion testing)Совместимость с аппаратной платформой, операционной системой и 
+	сетевой инфраструктурой 
+	Configuration Testing, Portability Testing. The process of testing to determine the 
+	portability of a software product (the ease with which the software product can be transferred 
+	from one hardware or software environment to another). 
+	[ISTQB Glossary]
+
+	кросс-браузерное тестирование, (cross-browser testing)
+	Совместимость с браузерами и их версиями
+
+
+
+====================================================================================================
+				подробное дополнение классификации
+
+
+		тестирование по природе приложения 
+мобильное (mobile applications testing)
+WEB (web-applications testing)
+десктопное (desktop applications testing)
+
+
+
+
+
+
+		тестирование по уровню архитектуры приложения
+уровень представления (presentation tier testing) сконцентрировано на той части приложения, 
+которая отвечает за взаимодействие с «внешним миром» (как пользователями, так и другими приложениями). 
+Здесь исследуются вопросы удобства использования, скорости отклика интерфейса, совместимости с 
+браузерами, корректности работы интерфейсов.
+
+уровень бизнес-логики  (business logic tier testing) отвечает за проверку основного набора функций 
+приложения и строится на базе ключевых требований к приложению, бизнес-правил и общей проверки 
+функциональности.
+
+уровень данных (data tier testing) сконцентрировано на той части приложения, которая отвечает за 
+хранение и некоторую обработку данных (чаще всего — в базе данных или ином хранилище). 
+Здесь особый интерес представляет тестирование данных, проверка соблюдения бизнес-правил, 
+тестирование производительности.
+
+
+
+
+		на основе (знания) источников ошибок
+Тестирование предугадыванием ошибок (error guessing) — техника тестирования, в которой тесты 
+разрабатываются на основе опыта тестировщика и его знаний о том, какие дефекты типичны для тех или 
+иных компонентов или областей функциональности приложения. Может комбинироваться с техникой 
+т.н. «ошибкоориентированного» тестирования (failure-directed testing), в котором новые тесты 
+строятся на основе информации о ранее обнаруженных в приложении проблемах.
+Error Guessing. A test design technique where the experience of the tester is used to anticipate 
+what defects might be present in the component or system under test as a result of errors made, 
+and to design tests specifically to expose them. 
+[ISTQB Glossary]
+
+Эвристическая оценка (heuristic evaluation) — техника тестирования удобства использования,  
+направленная на поиск проблем в интерфейсе пользователя, представляющих собой отклонение от 
+общепринятых норм.
+Heuristic Evaluation. A usability review technique that targets usability problems in the user 
+interface or user interface design. With this technique, the reviewers examine the interface and 
+judge its compliance with recognized usability principles (the «heu￾ristics»). 
+[ISTQB Glossary]
+
+Мутационное тестирование (mutation testing) — техника тестирования, в которой сравнивается поведение 
+нескольких версий одного и того же компонента, причём часть таких версий может быть специально 
+разработана с добавлением ошибок (что позволяет оценить эффективность тест-кейсов — качественные 
+тесты обнаружат эти специально добавленные ошибки). Может комбинироваться со следующим в этом списке 
+видом тестирования (тестированием добавлением ошибок).
+Mutation Testing, Back-to-Back Testing. Testing in which two or more variants of a component or system 
+are executed with the same inputs, the outputs compared, and analyzed in cases of discrepancies. 
+[ISTQB Glossary]
+
+Тестирование добавлением ошибок (error seeding) — техника тестирования, в которой в приложение 
+специально добавляются заранее известные, специально продуманные ошибки с целью мониторинга их 
+обнаружения и устранения и, таким образом, формированияболее точной оценки показателей процесса 
+тестирования. Может комбинироваться с предыдущим в этом списке видом тестирования 
+(мута-ционным тестированием).
+Error seeding. The process of intentionally adding known faults to those already in a computer program 
+for the purpose of monitoring the rate of detection and removal, and estimating the number of faults 
+remaining in the program. 
+[ISTQB Glossary]
+
+
+
+
+
+		на основе среды выполнения
+Тестирование в процессе разработки (development testing) — тестирование, выполняемое непосредственно 
+в процессе разработки приложения и/или в среде выполнения, отличной от среды реального использования 
+приложения. Как правило, выполняется самими разработчиками.
+Development testing. Formal or informal testing conducted during the implementation of a component 
+or system, usually in the development environment by developers. 
+[ISTQB Glossary]
+
+операционное тестирование (operational testing) — тестирование, проводимое в реальной или 
+приближенной к реальной операционной среде (operational environment), включающей операционную систему, 
+системы управления базами данных, серверы приложений, веб-серверы, аппаратное обеспечение и т.д.
+Operational testing. Testing conducted to evaluate a component or system in its operational environment.
+[ISTQB Glossary]
+Operational environment. Hardware and software products installed at users’ or customers’ sites where 
+the component or system under test will be used. The software may include operating systems, 
+database management systems, and other applications. 
+[ISTQB Glossary]
+
+
+
+
+
+
+		по степени вмешательства в работу приложения
+Инвазивное тестирование (intrusive testing) — тестирование, выполнение которого может повлиять 
+на функционирование приложения в силу работы инструментов тестирования (например, будут искажены 
+показатели производительности) или в силу вмешательства (level ofintrusion) в сам код приложения 
+(например, для анализа работы при-ложения было добавлено дополнительное протоколирование, включён 
+вывод отладочной информации и т.д.). Некоторые источники рассматривают инвазивное тестирование как 
+форму негативного или даже стрессового тестирования
+Level of intrusion. The level to which a test object is modified by adjusting it for testability. 
+[ISTQB Glossary]
+
+неинвазивное е (nonintrusive testing) — тестирование, выполнение которого незаметно для приложения 
+и не влияет на процесс его обычной работы.
+
+
+
+
+
+
+		на основе кода
+Тестирование по потоку управления (control flow testing) — семейство техник тестирования, в которых 
+тест-кейсы разрабатываются с целью активации и проверки выполнения различных последовательностей 
+событий, которые определяются посредством анализа исходного кода приложения. 
+Control Flow Testing. An approach to structure-based testing in which test cases are designed to 
+execute specific sequences of events. Various techniques exist for control flow testing, e.g., 
+decision testing, condition testing, and path testing, that each have their specific approach and 
+level of control flow coverage. [ISTQB Glossary]
+
+Тестирование по потоку данных (data-flow testing) — семейство техник тестирования, основанных на 
+выборе отдельных путей из потока управления с целью исследования событий, связанных с изменением 
+состояния переменных. 
+Data Flow Testing. A white box test design technique in which test cases are designed to execute 
+definition-use pairs of variables. [ISTQB Glossary]
+
+
+Тестирование по диаграмме или таблице состояний (state transition testing) — техника тестирования, 
+в которой тест-кейсы разрабатываются для проверки переходов приложения из одного состояния в дру-
+гое. Состояния могут быть описаны диаграммой состояний (state dia￾gram) или таблицей состояний 
+(state table) 
+State Transition Testing. A black box test design technique in which test cases are designed 
+to execute valid and invalid state transitions. [ISTQB Glossary]
+
+Инспекция (аудит) кода (code review, code inspection) — семейство техник повышения качества кода за 
+счёт того, что в процессе создания или совершенствования кода участвуют несколько человек. Степень 
+формализации аудита кода может варьироваться от достаточно беглого просмотра до тщательной формальной 
+инспекции. В отличие от техник статического анализа кода (по потоку управления и потоку данных) 
+аудит кода также улучшает такие его характеристики, как понятность, поддерживаемость, соответствие 
+соглашениям об оформлении и т.д. Аудит кода выполняется в основном самими программистами.
+Inspection. A type of peer review that relies on visual examination of documents to detect defects, 
+e.g. violations of development standards and non-conformance to higher level documentation. 
+The most formal review technique and therefore always based on a documented procedure. 
+[ISTQB Glossary]
+
+
+
+
+
+
+
+
+		на основе структур кода
+Тестирование на основе выражений (statement testing) — техника тестирования (по методу белого ящика), 
+в которой проверяется корректность (и сам факт) выполнения отдельных выражений в коде. 
+Statement Testing. A white box test design technique in which test cases are designed to execute 
+statements (statement is an entity in a programming language, which is typically the smallest 
+indivisible unit of execution). [ISTQB Glossary]
+
+Тестирование на основе ветвей (branch testing) — техника тестирования (по методу белого ящика), 
+в которой проверяется выполнение отдельных ветвей кода (под ветвью понимается атомарная часть кода, 
+выполнение которой происходит или не происходит в зависимости от истинности или ложности некоторого 
+условия).
+Branch Testing. A white box test design technique in which test cases are designed to execute branches 
+(branch is a basic block that can be selected for execution based on a program construct in which one 
+of two or more alternative program paths is available, e.g. case, jump, go to, if-then-else.). 
+[ISTQB Glossary]
+
+Тестирование на основе условий (condition testing) — техника тестирования (по методу белого ящика), 
+в которой проверяется выполнение отдельных условий (условием считается выражение, которое может быть 
+вычислено до значения «истина» или «ложь»).
+Condition Testing. A white box test design technique in which test cases are designed to execute 
+condition outcomes (condition is a logical expression that can be evaluated as True or False, 
+e.g. A > B). [ISTQB Glossary]
+
+Тестирование на основе комбинаций условий (multiple condition testing) — техника тестирования 
+(по методу белого ящика), в которой проверяется выполнение сложных (составных) условий.
+Multiple Condition Testing. A white box test design technique in which test cases are designed 
+to execute combinations of single condition outcomes (within one statement). 
+[ISTQB Glossary]
+
+Тестирование на основе отдельных условий, порождающих ветвление («решающих условий») 
+(modified condition decision coverage testing) — техника тестирования (по методу белого ящика), 
+в которой проверяется выполнение таких отдельных условий в составе сложных условий, которые в одиночку 
+определяют результат вычисления всего сложного условия.
+
+Тестирование на основе решений (decision testing) — техника тестирования (по методу белого ящика), 
+в которой проверяется выполнение сложных ветвлений (с двумя и более возможными вариантами). 
+Несмотря на то что «два варианта» сюда также подходит, формально такую ситуацию стоит отнести к 
+тестированию на основе условий.
+Decision Testing. A white box test design technique in which test cases are designed to execute 
+decision outcomes (decision is program point at which the control flow has two or more alternative 
+routes, e.g. a node with two or more links to separate branches). 
+[ISTQB Glossary]
+
+Тестирование на основе путей (path testing) — техника тестирования (по методу белого ящика), в 
+которой проверяется выполнение всех или некоторых специально выбранных путей в коде приложения
+Path testing. A white box test design technique in which test cases are designed to execute paths. 
+[ISTQB Glossary]
+
+
+
+
+
+		по техникам автоматизации
+под управлением данными DDT (data-driven testing) —способ разработки автоматизированных тест-кейсов, 
+в котором входные данные и ожидаемые результаты выносятся за пределы тест-кейса и хранятся вне его — 
+в файле, базе данных и т.д.
+Data-driven Testing (DDT). A scripting technique that stores test input and expected results in a 
+table or spreadsheet, so that a single control script can execute all of the tests in the table. 
+Data-driven testing is often used to support the application of test execution tools such as 
+capture/playback tools. [ISTQB Glossary]
+
+под управлением ключевыми словами KDT (keyword￾driven testing) — способ разработки автоматизированных 
+тест-кейсов, в котором за пределы тест-кейса выносится не только набор входных данных и ожидаемых 
+результатов, но и логика поведения тест-кейса, которая описывается ключевыми словами (командами)
+Keyword-driven Testing (KDT). A scripting technique that uses data files to contain not only test 
+data and expected results, but also keywords related to the application being tested. 
+The keywords are interpreted by special supporting scripts that are called by the control script or 
+the test. 
+[ISTQB Glossary]
+
+под управлением поведением BDT (behavior-driven test￾ing) — способ разработки автоматизированных 
+тест-кейсов, в котором основное внимание уделяется корректности работы бизнес-сценариев, а не отдельным 
+деталям функционирования приложения
+
+
+
+
+
+
+		другие виды тестирования
+Сравнительное тестирование (comparison testing) — тестирование, направленное на сравнительный анализ 
+преимуществ и недостатков разрабатываемого продукта по отношению к его основным конкурентам.
+
+Демонстрационное тестирование (qualification testing) — формальный процесс демонстрации заказчику 
+продукта с целью подтверждения, что продукт соответствует всем заявленным требованиям. 
+В отличие от приёмочного тестирования этот процесс более строгий и всеобъемлющий, но может проводиться 
+и на промежуточных стадиях разработки продукта.
+
+Исчерпывающее тестирование (exhaustive testing) — тестирование приложения со всеми возможными 
+комбинациями всех возможных входных данных во всех возможных условиях выполнения. Для сколь бы то 
+ни было сложной системы нереализуемо, но может применяться для проверки отдельных крайне простых 
+компонентов
+
