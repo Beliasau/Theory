@@ -5,16 +5,34 @@
 
 
 			тест план (test plan)
+Test plan. A document describing the scope, approach, resources and schedule of intended test 
+activities. It identifies amongst others test items, the features to be tested, the testing tasks, 
+who will do each task, degree of tester independence, the test environment, the test design techniques 
+and entry and exit criteria to be used, and the rationale for their choice, and any risks 
+requiring contingency planning. It is a record of the test planning process. 
+[ISTQB Glossary]
 План тестирования описывает все действия по тестированию в рамках одного проекта. 
 Здесь информация обо всем, что нужно сделать тестировщику или команде QA в ходе проекта. 
 В каждом плане тестирования указывается объект тестирования, график работы, 
 критерии начала и окончания тестирования, стратегия, риски и список выполненных работ.
 Также часто в (test plan) включается стратегия тестирования, график релизов на  несколько 
 ближайших спринтов. В зависимости от команды бывает разная степень детализации (test plan) 
-и его могут делать разные люди в команде.(ьенеджер или тестировщик мидл+)
+и его могут делать разные люди в команде.(менеджер или тестировщик мидл+)
 Обычно план тестирования делается до начала тестирования и до момента релиза.
 имеет разный форм-фактор;
 составляется не более, чем на 2-х страницах;
+	задачи 
+• оценка объёма и сложности работ;
+• определение необходимых ресурсов и источников их получения;
+• определение расписания, сроков и ключевых точек;
+• оценка рисков и подготовка превентивных контрмер;
+• распределение обязанностей и ответственности;
+• согласование работ по тестированию с деятельностью участников проектной 
+команды, занимающихся другими задачами.
+	свойства качественного тест-плана
+• Реалистичность (запланированный подход реально выполним).
+• Гибкость .
+• Согласованность с общим проектным планом и иными отдельными планами (например, планом разработки)
 	виды тест плана
 мастер (для всех команд на одном проекте)
 детальный (для каждой команды итерации, релиза)
@@ -28,15 +46,40 @@
 	структура тест плана:
 виды тестирования
 приоритет тестирования
+области подвергаемые тестированию и неподвергаемые
 стратегия тестирования
-окружение
-задачи тестировщиков(что может делать тестер на проекте)
+окружение(аппаратное, програмное, человеческие ресурсы)
+роли и ответственность на проекте
 тестовая документация
 техники тест-дизайна
 баг-трекинг
-критерии начала и окончания тестирования
+критерии
+	Критерии начала тестирования (entry criteria)
+	Приёмочные критерии, критерии качества (acceptance criteria)
+	Критерии приостановки тестирования (suspension criteria)
+	Критерии возобновления тестирования (resumption criteria)
+	Критерии завершения тестирования (exit criteria)
 инструменты для работы(Jira. таблицы Excel. Postman и тд)
 оценки качества\ метрики
+Acceptance criteria. The exit criteria that a component or system must satisfy in order to be 
+accepted by a user, customer, or other authorized entity. 
+[ISTQB Glossary]
+Entry criteria. The set of generic and specific conditions for permitting a process to go 
+forward with a defined task, e.g. test phase. The purpose of entry criteria is to prevent a task from 
+starting which would entail more (wasted) effort compared to the effort needed to remove the failed 
+entry criteria.
+[ISTQB Glossary]
+Suspension criteria. The criteria used to (temporarily) stop all or a portion of the testing 
+activities on the test items. 
+[ISTQB Glossary]
+Resumption criteria. The criteria used to restart all or a portion of the testing activities that 
+were suspended previously. 
+[ISTQB Glossary]
+Exit criteria. The set of generic and specific conditions, agreed upon with the stakeholders 
+for permitting a process to be officially completed. The purpose of exit criteria is to prevent a 
+task from being considered completed when there are still outstanding parts of the task which have not 
+been finished. Exit criteria are used to report against and to plan when to stop testing. 
+[ISTQB Glossary]
 
 ссылки
 https://habr.com/ru/company/true_engineering/blog/428053/  (это тест план, не тест стратегия!!)
@@ -85,6 +128,10 @@ http://www.protesting.ru/testing/plan.html
 информация о продукте
 виды тестирования
 критерии начала и окончания тестирования
+Test strategy. A high-level description of the test levels to be performed and the testing within 
+those levels (group of test activities that are organized and managed together, e.g. component test, 
+integration test, system test and acceptance test) for an organi￾zation or program (one or more projects)
+[ISTQB Glossary]
 
 
 
@@ -250,18 +297,35 @@ Priority выставляется менеджером, тимлидом или 
 
 
 
-			Отчёт о тестировании (Test Report)
+			Отчёт о тестировании (test progress report, test summary report)
 документ который показывает нам то как прошло наше тестирование в рамках 
 определенного временного промежутка
+Test progress report. A document summarizing testing activities and results, produced at regular 
+intervals, to report progress of testing activities against a baseline (such as the original test plan) 
+and to communicate risks and alternatives requiring a decision to management. 
+[ISTQB Glossary]
+Test summary report. A document summarizing testing activities and results. It also contains 
+an evaluation of the corresponding test items against exit criteria. 
+[ISTQB Glossary]
+	задачи:
+• оценка объёма и качества выполненных работ;
+• оценка текущего статуса и прогресса (в сравнении с планом);
+• обозначение существующих и возможных проблем (если такие есть);
+• формирование прогноза развития ситуации и фиксация рекомендаций по 
+устранению проблем и повышению эффективности работы.
+
 	типы отчетов
 финальный
 промежуточный(недельный, месячный, дневной, версионный(итерационный), финальный)
-	части отчета
+	разделы отчета по результатам тестирования
+конкретных устоявшихся разделов для отчета - нет, это только некоторые из:
+Краткое описание (summary). В предельно краткой форме отражает основные достижения, проблемы, выводы и 
+  рекомендации. 
 состав команды
-сроки
+сроки/расписание
 описание процессов тестирования
 дополнения к тестовым кейсам
-процент пройденных кейсов
+статистика пройденных кейсов
 критичные баги
 результаты регрессионного тестирования
 планы (только для промежуточных)
