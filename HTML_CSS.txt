@@ -7,6 +7,25 @@
 и содержанием веб-страниц. Также включение CSS в HTML описывает внешний вид и макет страницы.
 Единица информации в HTML это теги
 
+
+
+структура HTML документа
+
+  <!DOCTYPE html>             
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+===================================
+
 <html></html>	
 Указывает программе просмотра страниц, что это HTML документ.
 
