@@ -44,3 +44,26 @@
 Оценка рисков (Risks and contingencies);
 
 Согласования (Approvals).
+
+
+
+			тестовая стратегия
+может быть отдельным документом либо же частью тест-плана
+	этапы тест-стратегии
+сбор информации
+анализ информации
+принятие решений (какие виды тестирования будут применятся в проекте)
+презентация(менеджменту или команде, разрабам, тестировщ, бизнес аналитику)
+	кто составляет
+менеджер
+тестировщик(уровня Middle+)
+	что включает?
+цель тестирования
+(для чего будет использоваться конретный вид тестирования, чтобы добится результата)
+информация о продукте
+виды тестирования
+критерии начала и окончания тестирования
+Test strategy. A high-level description of the test levels to be performed and the testing within 
+those levels (group of test activities that are organized and managed together, e.g. component test, 
+integration test, system test and acceptance test) for an organi￾zation or program (one or more projects)
+[ISTQB Glossary]
