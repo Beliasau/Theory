@@ -10,4 +10,6 @@
 
 #### ![useful from Rusau](https://docs.google.com/spreadsheets/d/1qaCuDQMQFB7yGO8N4C_aC2ncyRobXkriReRsp-UTOE4/edit?usp=sharing)
 
+#### ![useful from koneva](https://docs.google.com/spreadsheets/d/1YM8ey2VNZ63q-IQxQoitro7zNN_rcOfsUB-wCi_hMCY/edit?usp=sharing)
+
 #### ![my check-list](https://docs.google.com/spreadsheets/d/14ypsdLsqEScqKUc5_BydgL3paAzXAnyOhhMsuqgWc2A/edit?usp=sharing)
