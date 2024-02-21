@@ -10,3 +10,8 @@
 
 
 Sanity tests
+
+
+graphQl
+
+
